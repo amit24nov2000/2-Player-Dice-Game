@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dice-game
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dice-game
+  template:
+    metadata:
+      labels:
+        app: dice-game
+    spec:
+      containers:
+      - name: dice-game
+        image: amit24nov2000/dice-game:latest
+        ports:
+        - containerPort: 3000
+
